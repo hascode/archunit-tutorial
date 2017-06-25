@@ -4,4 +4,8 @@ import com.hascode.tutorial.comp1.SomeComponent;
 
 public class OtherComponent {
   private SomeComponent someComponent;
+
+  public OtherComponent() {
+    someComponent.foo();
+  }
 }
