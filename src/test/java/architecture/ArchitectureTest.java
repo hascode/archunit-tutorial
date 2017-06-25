@@ -15,11 +15,13 @@ public class ArchitectureTest {
   @ArchTest
   public static final ArchRule comp2_must_not_access_comp1 = noClasses().that()
       .resideInAPackage("com.hascode.tutorial.comp2").should().accessClassesThat()
-      .resideInAPackage("com.hascode.tutorial.comp1");
+      .resideInAPackage("com.hascode.tutorial.comp1").because(
+          "Classes in package com.hascode.tutorial.comp2 should not be accessed from classes in package com.hascode.tutorial.comp1");
 
 
   @ArchTest
   public static final ArchRule no_deprecated_classes_in_comp1_package = noClasses().that()
       .areAnnotatedWith(Deprecated.class).should()
-      .resideInAnyPackage("com.hascode.tutorial.comp1");
+      .resideInAnyPackage("com.hascode.tutorial.comp1")
+      .because("Deprecated classes should not be allowed in package com.hascode.tutorial.comp1");
 }
