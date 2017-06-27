@@ -2,6 +2,7 @@ package architecture;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 import static com.tngtech.archunit.library.GeneralCodingRules.USE_JAVA_UTIL_LOGGING;
+import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -30,5 +31,11 @@ public class ArchitectureTest {
   public static final ArchRule MUST_NOT_USE_JAVA_UTIL_LOGGING = noClasses()
       .should(USE_JAVA_UTIL_LOGGING)
       .because("slf4j and logback/log4j2 should be used instead of java.util logger");
+
+
+  @ArchTest
+  public static final ArchRule NO_CYCLIC_DEPENDENCIES =
+      slices().matching("com.hascode.(tutorial).(*)").namingSlices("$2 of $1").should()
+          .beFreeOfCycles();
 
 }

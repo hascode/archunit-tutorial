@@ -21,7 +21,8 @@ public class NoFooMethodConditionExampleTest {
   private static final ArchCondition<JavaClass> NO_FOO_METHOD_CONDITION = new NoFooMethodCondition();
 
   @ArchTest
-  public static final ArchRule CUSTOM_RULE = classes().that(IS_IN_COMP_1).should(
+  public static final ArchRule NO_METHOD_NAMED_FOO_IN_COMP1 = classes().that(IS_IN_COMP_1).should(
       NO_FOO_METHOD_CONDITION);
+
 
 }

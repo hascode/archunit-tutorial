@@ -8,4 +8,7 @@ public class OtherComponent {
   public OtherComponent() {
     someComponent.foo();
   }
+
+  public void bar() {
+  }
 }

@@ -1,6 +1,6 @@
 # ArchUnit Tutorial
 
-Example using [ArchUnit] for validating architectural constraints.
+Examples using [ArchUnit] for validating architectural constraints.
 
 ```bash
 src
