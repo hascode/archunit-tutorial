@@ -17,8 +17,11 @@ src
 └── test
     └── java
         ├── architecture
-        │   ├── ArchitectureTest.java
-        │   └── NoFooMethodConditionExampleTest.java
+        │   ├── CyclicDependenciesExampleTest.java
+        │   ├── NoDeprecatedClassesExampleTest.java
+        │   ├── NoFooMethodConditionExampleTest.java
+        │   ├── PackageAccessExampleTest.java
+        │   └── PredefinedRulesExampleTest.java
         └── com
             └── hascode
                 └── tutorial
@@ -30,7 +33,7 @@ src
 
 ## Running the Tests
 
-Simply run the tests using [Maven]:
+Simply run the tests using [Maven], they should all be failing to prove that the given architecture does not match the defined rules:
 
 ```bash
 mvn test
