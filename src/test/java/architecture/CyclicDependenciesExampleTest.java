@@ -14,7 +14,10 @@ public class CyclicDependenciesExampleTest {
 
   @ArchTest
   public static final ArchRule NO_CYCLIC_DEPENDENCIES =
-      slices().matching("com.hascode.(tutorial).(*)").namingSlices("$2 of $1").should()
+      slices()
+          .matching("com.hascode.(tutorial).(*)")
+          .namingSlices("$2 of $1")
+          .should()
           .beFreeOfCycles();
 
 }

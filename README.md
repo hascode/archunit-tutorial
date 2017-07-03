@@ -18,6 +18,7 @@ src
     └── java
         ├── architecture
         │   ├── CyclicDependenciesExampleTest.java
+        │   ├── IgnoringATest.java
         │   ├── NoDeprecatedClassesExampleTest.java
         │   ├── NoFooMethodConditionExampleTest.java
         │   ├── PackageAccessExampleTest.java
